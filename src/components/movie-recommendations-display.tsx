@@ -81,7 +81,7 @@ export function MovieRecommendationsDisplay({
 			transition: {
 				delay: custom * 0.2,
 				duration: 0.5,
-				type: "spring",
+				type: "spring" as const,
 				stiffness: 300,
 				damping: 30,
 			},

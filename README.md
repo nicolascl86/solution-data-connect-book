@@ -1,3 +1,31 @@
+# Dogear — book discovery
+
+A responsive book recommendation app built on the original Next.js demo in this repository.
+
+## Run
+
+```sh
+npm run dev
+```
+
+Open http://localhost:3000. The book app needs no cloud credentials or Firebase emulator.
+
+- Search the curated catalog by title or author, filter by genre, and sort books.
+- Choose a reading mood to rank matching books first.
+- Open a book for its description and save it to your reading list.
+- Reading preferences and saved books persist in browser local storage on this device.
+
+The catalog lives in `src/lib/books.ts`; covers from Open Library are served locally from `public/covers`. Ratings are illustrative catalog scores. Recommendations use catalog mood tags, rather than a live AI service. The original Firebase movie demo code and setup instructions remain below as reference; it is not connected to the Dogear home page.
+
+## Validation
+
+```sh
+node node_modules/typescript/bin/tsc --noEmit
+npm run build
+```
+
+---
+
 # FriendlyMovies: Firebase Data Connect Movie Recommendation app
 
 This is a demo app that shows to build a movie review and recommendation app using Firebase and Next.js.

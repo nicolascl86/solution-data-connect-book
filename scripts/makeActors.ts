@@ -699,7 +699,7 @@ async function generateActorImages() {
       }
     } catch (e) {
       console.error("Error with", actor.id, "continuing");
-      console.error(e.message);
+      console.error(e instanceof Error ? e.message : String(e));
       continue;
     }
   }

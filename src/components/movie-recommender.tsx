@@ -143,7 +143,7 @@ function LoadingState() {
 					animate={{ opacity: 1, x: 0 }} // Fade in and slide to position
 					exit={{ opacity: 0, x: -50 }} // Exit to left
 					transition={{
-						type: "spring",
+						type: "spring" as const,
 						stiffness: 300,
 						damping: 30,
 						mass: 1,
@@ -383,8 +383,8 @@ export function MovieRecommender({
 	};
 
 	// Get current stage
-	console.log("stage:", determineStage(messages));
-	const currentStage = determineStage(messages);
+	console.log("stage:", determineStage());
+	const currentStage = determineStage();
 
 	// Get recommendations and questions from messages
 	const recommendations = extractRecommendations(messages);
@@ -392,7 +392,7 @@ export function MovieRecommender({
 
 	// Transition configurations for Framer Motion
 	const transition = {
-		type: "spring",
+		type: "spring" as const,
 		stiffness: 400,
 		damping: 30,
 		mass: 1,
@@ -430,7 +430,7 @@ export function MovieRecommender({
 			transition: {
 				delay: custom * 0.05, // Stagger based on item index
 				duration: 0.3,
-				type: "spring",
+				type: "spring" as const,
 				stiffness: 500,
 				damping: 25,
 			},
@@ -446,7 +446,7 @@ export function MovieRecommender({
 			transition: {
 				delay: custom * 0.2,
 				duration: 0.5,
-				type: "spring",
+				type: "spring" as const,
 				stiffness: 300,
 				damping: 30,
 			},
@@ -713,7 +713,7 @@ export function MovieRecommender({
 						height: currentStage === "input" ? 240 : 550,
 					}}
 					transition={{
-						type: "spring",
+						type: "spring" as const,
 						stiffness: 500,
 						damping: 30,
 					}}
